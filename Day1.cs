@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Advent_of_code
 {
-    class Program
+    class Day1
     {
         static void Main(string[] args)
         {
