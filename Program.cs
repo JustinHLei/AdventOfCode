@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Advent_of_code
 {
@@ -16,23 +12,10 @@ namespace Advent_of_code
                 using (StreamReader sr = new StreamReader(@"input.txt"))
                 {
                     String line = sr.ReadToEnd();
-                    int number = 0;
-                    int counter = 0;
-                    foreach(char c in line)
-                    {
-                        counter++;
-                        if (c == '(')
-                            number++;
-                        else
-                            number--;
 
-                        if (number == -1)
-                        {
-                            Console.WriteLine(counter);
-                            break;
-                        }
-                    }
-                    Console.WriteLine(number);
+                    PartOne(line);
+                    PartTwo(line);
+                    
                 }
             }
             catch (Exception e)
@@ -42,6 +25,41 @@ namespace Advent_of_code
             }
 
             Console.ReadKey();
+        }
+
+        //Part One
+        static void PartOne(String line)
+        {
+            int number = 0;
+            foreach (char c in line)
+            {
+                if (c == '(')
+                    number++;
+                else
+                    number--;
+            }
+            Console.WriteLine(number);
+        }
+
+        //Part Two
+        static void PartTwo(String line)
+        {
+            int number = 0;
+            int counter = 0;
+            foreach (char c in line)
+            {
+                counter++;
+                if (c == '(')
+                    number++;
+                else
+                    number--;
+
+                if (number == -1)
+                {
+                    Console.WriteLine(counter);
+                    break;
+                }
+            }
         }
     }
 }
