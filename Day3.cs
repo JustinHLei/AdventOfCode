@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace Advent_Of_Code
 {
-    class Program
+    class Day3
     {
         static void Main(string[] args)
         {
